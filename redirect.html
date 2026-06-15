@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DoppelGoal - Redirection...</title>
+<style>
+body{background:#000;color:#fff;font-family:Arial,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;}
+p{font-size:18px;opacity:0.7;}
+</style>
+</head>
+<body>
+<p>Redirection en cours...</p>
+<script>
+const params = new URLSearchParams(window.location.search);
+const pack = params.get('pack') || '';
+
+const links = {
+  'starter': 'https://buy.stripe.com/test_aFa9AT6xndrwc462LaeME00',
+  'pro': 'https://buy.stripe.com/test_9B65kD5tjdrw5FIdpOeME01',
+  'elite': 'https://buy.stripe.com/test_28E9AT6xndrw6JM99yeME02'
+};
+
+const url = links[pack.toLowerCase()] || links['starter'];
+window.location.href = url;
+</script>
+</body>
+</html>
